@@ -45,7 +45,6 @@ const Home = () => {
                     name={country.name}
                     emoji={country.emoji}
                     code={country.code}
-                    native={country.native}
                   ></Countries>
                 ))
             : null}
