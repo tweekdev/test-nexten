@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { LIST_COUNTRIES } from '../GraphQL/queries';
 import Countries from './Countries/Countries';
 import './Home.css';
-import './Search';
+
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [countries, setCountries] = useState([]);
