@@ -1,6 +1,11 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client/react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from 'react-router-dom';
 import './App.css';
 import Country from './components/Country/Country';
 import Home from './components/Home';
@@ -21,6 +26,7 @@ const App = () => {
       <Route path='/pays/:pays'>
         <Country />
       </Route>
+      <Redirect to='/pays' />
     </Switch>
   );
 

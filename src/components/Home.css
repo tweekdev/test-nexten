@@ -3,9 +3,12 @@
 	display: flex;
 	flex-direction: column;
 }
+h1 {
+	color: #7474ff;
+	text-transform: uppercase;
+}
 input {
 	display: flex;
-	
 	background-color: #7474ff;
 	padding: 1rem;
 	margin: 2rem;

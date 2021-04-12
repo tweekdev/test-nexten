@@ -17,41 +17,40 @@ const Home = () => {
   if (error) return <div>Error...</div>;
 
   return (
-    <div className='main-home'>
-      <section className='container'>
-        <input
-          className='form-control search-tabs search1'
-          placeholder='recherche'
-          type='text'
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        {loading ? (
-          <div className>loading...</div>
-        ) : (
-          <div className='datas'>
-            {countries
-              ? countries
-                  .filter((val) => {
-                    if (searchTerm === '') {
-                      return val;
-                    } else if (
-                      val.name.toLowerCase().includes(searchTerm.toLowerCase())
-                    ) {
-                      return val;
-                    }
-                  })
-                  .map((country, i) => (
-                    <Countries
-                      name={country.name}
-                      emoji={country.emoji}
-                      code={country.code}
-                      native={country.native}
-                    ></Countries>
-                  ))
-              : null}
-          </div>
-        )}
-      </section>
+    <div className='container'>
+      <h1>Countries</h1>
+      <input
+        className='form-control'
+        placeholder='recherche'
+        type='text'
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      {loading ? (
+        <div className>loading...</div>
+      ) : (
+        <div className='datas'>
+          {countries
+            ? countries
+                .filter((val) => {
+                  if (searchTerm === '') {
+                    return val;
+                  } else if (
+                    val.name.toLowerCase().includes(searchTerm.toLowerCase())
+                  ) {
+                    return val;
+                  }
+                })
+                .map((country, i) => (
+                  <Countries
+                    name={country.name}
+                    emoji={country.emoji}
+                    code={country.code}
+                    native={country.native}
+                  ></Countries>
+                ))
+            : null}
+        </div>
+      )}
     </div>
   );
 };
