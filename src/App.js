@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client/react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Country from './components/Country/Country';
+import Home from './components/Home';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+// initialize a GraphQL client
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  uri: 'https://countries.trevorblades.com',
+});
+
+const App = () => {
+  let routes;
+  routes = (
+    <Switch>
+      <Route path='/pays' exact>
+        <Home />
+      </Route>
+      <Route path='/pays/:pays'>
+        <Country />
+      </Route>
+    </Switch>
   );
-}
 
+  return (
+    <ApolloProvider client={client}>
+      <Router>
+        <div className='App'>
+          <main>{routes}</main>
+        </div>
+      </Router>
+    </ApolloProvider>
+  );
+};
 export default App;
