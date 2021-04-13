@@ -13,7 +13,7 @@ const Search = () => {
   if (error) console.log(error.message)
   if(loading) return <p>loading....</p>
   return (
-    <select value={language} onChange={(e) => setLanguage(e.target.value)}>
+    <select className='form-control' value={language} onChange={(e) => setLanguage(e.target.value)}>
       {data.languages.map((l) => (
         <option key={l.code} value={l.code}>
           {l.name}

@@ -7,7 +7,7 @@ h1 {
 	color: #7474ff;
 	text-transform: uppercase;
 }
-input {
+.form-control {
 	display: flex;
 	background-color: #7474ff;
 	padding: 1rem;
