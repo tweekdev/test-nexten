@@ -6,3 +6,5 @@ il y a juste a download le repository
 faire un `npm install` et `npm start`
 
 une fois lancé, rechercher le pays que vous voulez à partir du champs de recherche :)
+
+### PS: la partie recherche par language n'est pas encore oppérationnelle 
