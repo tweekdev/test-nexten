@@ -33,11 +33,9 @@ export const COUNTRY = gql`
 
 export const LIST_LANGUAGES = gql`
   {
-    countries {
-      languages {
-        code
-        name
-      }
+    languages {
+      code
+      name
     }
   }
 `;

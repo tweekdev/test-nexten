@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { LIST_COUNTRIES } from '../GraphQL/queries';
 import Countries from './Countries/Countries';
 import './Home.css';
+import Search from './Search/Search';
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -19,6 +20,7 @@ const Home = () => {
   return (
     <div className='container'>
       <h1>Countries</h1>
+      <Search onChange={(e) => setSearchTerm(e.target.value)}/>
       <input
         className='form-control'
         placeholder='recherche'
@@ -38,6 +40,12 @@ const Home = () => {
                     val.name.toLowerCase().includes(searchTerm.toLowerCase())
                   ) {
                     return val;
+                  } else if (
+                    val.code
+                      .toLowerCase()
+                      .includes(searchTerm.toLowerCase())
+                  ) {
+                    return val;
                   }
                 })
                 .map((country, i) => (
@@ -45,7 +53,7 @@ const Home = () => {
                     name={country.name}
                     emoji={country.emoji}
                     code={country.code}
-                  ></Countries>
+                  />
                 ))
             : null}
         </div>

@@ -17,20 +17,29 @@ const Country = () => {
 
   return (
     <div>
-      <h2>{data.country.name}</h2>
+      <h2>{data.country.name} {data.country.emoji}</h2>
       <div className='country'>
-        <p>code: {data.country.code}</p>
-        <p>{data.country.emoji}</p>
-        <p>capital: {data.country.capital}</p>
-        <p>Currency: {data.country.currency}</p>
-        {data.country.languages.map((language) => (
-          <>
-            <p>Language: {language.name}</p>
-            <p>Language code: {language.code}</p>
-          </>
-        ))}
+        <p><span>code:</span> {data.country.code}</p>
+        <p><span>capital:</span> {data.country.capital}</p>
+        <p><span>Currency:</span> {data.country.currency}</p>
+
+        <h3><span>languages:</span></h3>
+        <div className="datas-language">
+        <table>
+          <th>Language</th>
+          <th>Code</th>
+            <tbody>
+            {data.country.languages.map((language) => (
+              <tr>
+                <td>{language.name}</td>
+                <td>{language.code}</td>
+              </tr>
+            ))}
+          </tbody>
+          </table>
+        </div>
       </div>
-      <Link to={`/pays`}>trouver un autre pays ?</Link>
+      <Link to={`/pays`}><span>trouver un autre pays ?</span></Link>
     </div>
   );
 };

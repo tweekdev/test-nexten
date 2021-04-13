@@ -1,3 +1,33 @@
 .country{
 	color: #7474ff;
 }
+
+p{
+	margin: 2rem;
+	font-weight: bold;
+}
+
+span{
+	color: #fefefe;
+	background: #7474ff;
+	padding: .5rem;
+	margin: 1rem;
+	border-radius: 5px;
+}
+
+.datas-language{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 5rem;
+}
+
+table {
+	max-width: 25rem;
+	text-align: center;
+	width: 100%;
+	border-radius: 3px;
+	padding: 25px 30px;
+	justify-content: space-between;
+	margin-bottom: 25px;
+}
